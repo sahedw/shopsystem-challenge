@@ -8,5 +8,6 @@ public class Main {
         ShopSystem shop = new ShopSystem();
         System.out.println(shop.listOrders());
         System.out.println(shop.getProduct("2"));
+        System.out.println(shop.getProduct("1"));
     }
 }
