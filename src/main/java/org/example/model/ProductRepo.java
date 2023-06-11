@@ -6,20 +6,22 @@ import java.util.List;
 import java.util.Map;
 
 public class ProductRepo {
+    private Map<String, Product> listOfProducts;
 
-    private Product laptop = new Product("Laptop", "1");
-    private Product computer = new Product("Computer", "2");
-    private Product mouse = new Product("Mouse", "3");
-    private Product keyboard = new Product("Keyboard", "4");
+    public ProductRepo() {
+        listOfProducts = new HashMap<>();
 
-    private Map<String, Product> listOfProducts = new HashMap<>(Map.of("Laptop", laptop,"Computer", computer,"Mouse", mouse,"Keyboard", keyboard));
+        listOfProducts.put("1", new Product("Keyboard", "1"));
 
-    public Map<String, Product> list() {
-        return this.listOfProducts;
+        listOfProducts.put("2", new Product("Laptop", "2"));
     }
 
-    public Product get(String name) {
-        return listOfProducts.get(name);
+    public List<Product> list() {
+        return new ArrayList<>(listOfProducts.values());
+    }
+
+    public Product get(String id) {
+        return listOfProducts.get(id);
     }
 
 }
